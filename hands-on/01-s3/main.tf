@@ -8,3 +8,13 @@ terraform {
     }
   }
 }
+
+resource "aws_s3_bucket" "hands_on" {
+  bucket_prefix = var.bucket_prefix
+
+  tags = {
+    Name        = "Terraform S3 Hands-on"
+    Environment = "learning"
+    ManagedBy   = "Terraform"
+  }
+}
